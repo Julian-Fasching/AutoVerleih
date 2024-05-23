@@ -1,0 +1,35 @@
+﻿@model List<Auto>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h1>Das sind meine Autos</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>NameAuto</th>
+            <th>Kilometerstand</th>
+            <th>Farbe</th>
+            <th>Leistung</th>
+        </tr>
+    </thead>
+   
+
+    <body>
+    @{
+        foreach (var autos in Model)
+        {
+            <tr>
+                <td>@(autos.AutoId)</td>
+                <td>@(autos.NameAuto)</td>
+                <td>@(autos.Kilometerstand)</td>
+                <td>@(autos.Farbe)</td>
+                <td>@(autos.Leistung)</td>
+            </tr>
+        }
+    }
+
+    </body>
+</table>
