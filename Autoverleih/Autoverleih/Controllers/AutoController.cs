@@ -1,3 +1,5 @@
+using Autoverleih.Models;
+using Autoverleih.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Autoverleih.Controllers;
@@ -12,4 +14,10 @@ public class AutoController : Controller
         return View(myAutos);
         
     }
+
+    public IActionResult New()
+    {
+        return View();
+    }
+        
 }
