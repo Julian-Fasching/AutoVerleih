@@ -19,5 +19,15 @@ public class AutoController : Controller
     {
         return View();
     }
+
+    [HttpPost]
+    public IActionResult SaveAuto(Auto auto)
+    {
+        AutoRepository repo = new AutoRepository();
+        
+        repo.CreateAuto(auto);
+        
+        return Redirect("/Auto");
+    }
         
 }

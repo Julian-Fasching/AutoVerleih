@@ -2,20 +2,53 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-<h1>neuen Burger erstellen</h1>
+<h1>Autos hinzufügen</h1>
+<form action="/Auto/SaveAuto" method="post">
+    
 
-<table>
+<table class ="table">
     <thead>
     <tr>
-        <td>bezeichnung</td>
-        <td>eingabe</td>
+        <td>Bezeichnung</td>
+        <td>Eingabe</td>
+       
+
     </tr>
     </thead>
-     <body>
+    <body>
     <tr>
-        <td>Title</td>
-        <td><input type="text" id="Title" name="Title"></td>
+        <td>Name Auto</td>
+        <td><input type="text" id="Name Auto" name="Name Auto"></td>
     </tr> 
+     
+    <tr>
+        <td>Leistung</td>
+        <td><input type="number" id="Leistung" name="Leistung"></td>
+    </tr> 
+     
+    <tr>
+        <td>KM</td>
+        <td><input type="number" id="Kilometerstand" name="Kilometerstand"></td>
+    </tr> 
+     
+    <tr>
+        <td>Farbe</td>
+        <td><input type="color" id="Farbe" name="Farbe"></td>
+    </tr> 
+     
+     
+    <tr>
+         
+        <td>
+            <a href ="/Auto" class="btn btn-danger">Abbrechen</a>
+        </td>
+        <td>
+            <button class="btn btn-success" type="submit">Speichern</button>
+        </td>
+    </tr> 
+     
+     
 
     </body>
-    </table>
+</table>
+</form>

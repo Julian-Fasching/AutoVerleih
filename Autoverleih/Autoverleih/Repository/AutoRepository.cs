@@ -44,7 +44,17 @@ public class AutoRepository
 
     public void CreateAuto(Auto autos)
     {
+        NpgsqlConnection myconnection = ConnectToDB();
         
+        using NpgsqlCommand cmd = new NpgsqlCommand(
+            "INSERT INTO auto (NameAuto, Leistung, Kilometerstand, Farbe) VALUES (:v1,:v2,:v3,:v4)", myconnection);
+        cmd.Parameters.AddWithValue("v1", autos.NameAuto);
+        cmd.Parameters.AddWithValue("v2", autos.Leistung);
+        cmd.Parameters.AddWithValue("v3", autos.Kilometerstand);
+        cmd.Parameters.AddWithValue("v4", autos.Farbe);
+        
+        int rowsAffected = cmd.ExecuteNonQuery();
+        myconnection.Close();
     }
     
     public void DeleteAuto(Auto AutoId)
